@@ -21,14 +21,14 @@
 
    <!--  constructor injection example -->
 
-   <bean class="org.gfg.model.Employee" name="emp" >
+ <!--  <bean class="org.gfg.model.Employee" name="emp" >
       <constructor-arg value="1" />
       <constructor-arg value="Robin" />
       <constructor-arg value="robin@gmail.com" />
-   </bean>
+   </bean>-->
 
    <bean class="org.gfg.model.Addition" name="add" >
-      <constructor-arg value="1" type="int" />
+      <constructor-arg value="1" type="int"/>
       <constructor-arg value="2" type="int"/>
    </bean>
 

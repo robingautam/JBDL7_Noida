@@ -13,9 +13,9 @@ public class App
         //Employee employee = new Employee(); // but it's not recommended
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config.xml");
-        Employee employee = applicationContext.getBean("emp", Employee.class);
+     //   Employee employee = applicationContext.getBean("emp", Employee.class);
 
-        System.out.println(employee);
+//        System.out.println(employee);
 
         Addition addition = applicationContext.getBean("add", Addition.class);
 

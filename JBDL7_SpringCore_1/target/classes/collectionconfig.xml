@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean class="org.gfg.collection.Student" name="student,st2" parent="person" scope="singleton">
+        <property name="id" value="1" />
+        <property name="name" value="aakash" />
+        <property name="email" value="aakash@gmail.com" />
+        <property name="subjects" ref="list">
+        </property>
+        <property name="set">
+            <set>
+                <value>Hindi</value>
+                <value>English</value>
+                <value>Maths</value>
+                <value>Maths</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="Hindi" value="89" />
+                <entry key="English" value="80" />
+                <entry key="Maths" value="96" />
+            </map>
+        </property>
+        <property name="address" ref="address" />
+    </bean>
+
+    <alias name="student" alias="aliasst" />
+
+   <!-- <bean class="org.gfg.collection.Address" name="address">
+        <property name="street1" value="M.V" />
+        <property name="street2" value="phase 1" />
+        <property name="pincode" value="110091" />
+    </bean>-->
+
+    <bean class="org.gfg.collection.Person" name="person">
+        <property name="username" value="123456" />
+    </bean>
+
+    <!-- using the p namespace-->
+    <bean name="address" class="org.gfg.collection.Address" p:street1="M.V" p:street2="ph 1" p:pincode="110091" />
+
+  <!--  <bean class="org.gfg.collection.FileOperation" name="fileOperation" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="textContent" value="some data" />
+    </bean>-->
+
+    <bean class="org.gfg.collection.DBOperation" name="db">
+        <property name="dbConnection" value="dummy connection" />
+    </bean>
+
+    <util:list list-class="java.util.ArrayList" id="list">
+        <value>Hindi</value>
+        <value>Maths</value>
+        <value>Robin</value>
+    </util:list>
+
+</beans>
