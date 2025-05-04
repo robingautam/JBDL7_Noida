@@ -6,12 +6,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class Student {
 
-    @Value("1")
+
     int id;
-    @Value("robin")
     String name;
-    @Value("robin@gmail.com")
     String email;
+
+    public Student(){}
+
+    public Student(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
 
     public int getId() {
         return id;
